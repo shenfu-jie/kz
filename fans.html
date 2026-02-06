@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KK的故事短片 | 电影风格网站</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;600;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 电影胶片边缘效果 -->
+    <div class="film-edge top-edge"></div>
+    <div class="film-edge bottom-edge"></div>
+    <div class="film-perforation left-perforation"></div>
+    <div class="film-perforation right-perforation"></div>
+    
+    <!-- 星空背景 -->
+    <div class="star-field"></div>
+    
+    <!-- 音乐控制 -->
+    <div class="music-control">
+        <button id="musicToggle" class="music-btn">
+            <span class="icon">🎵</span>
+            <span id="musicStatus">播放</span>
+        </button>
+        <audio id="backgroundMusic" loop>
+            <source src="./assert/0627稻香.mp3" type="audio/mpeg">
+            您的浏览器不支持音频元素。
+        </audio>
+    </div>
+
+    <!-- 导航指示器 -->
+    <div class="nav-indicator">
+        <div class="indicator-dots">
+            <div class="nav-title">章节</div>
+        </div>
+    </div>
+
+    <!-- 进度条 -->
+    <div class="progress-container">
+        <div class="progress-bar" id="pageProgress"></div>
+    </div>
+
+    <!-- 主容器 -->
+    <main class="story-container">
+        <!-- 第一部分：封面 -->
+        <section class="story-section cover-section" id="section1">
+            <div class="film-grain"></div>
+            <div class="section-content">
+                <div class="title-container">
+                    <div class="title-line"></div>
+                    <h1 class="section-title">
+                        <span class="title-gradient">Q&A</span>
+                        <span class="title-sub">来自小风车</span>
+                    </h1>
+                    <div class="title-line"></div>
+                </div>
+                
+                <div class="cover-subtitle">
+                    <p class="subtitle-text">一段特别的回忆与情感</p>
+                    <div class="subtitle-line"></div>
+                </div>
+                
+                <div class="photo-wall">
+                    <h2 class="photo-wall-title">
+                        <span class="title-number">01</span>
+                        <span class="title-text">记忆的碎片</span>
+                    </h2>
+                    <p class="photo-wall-desc">点点滴滴汇聚成我们共同的故事</p>
+                    
+                    <div class="photo-grid">
+                        <div class="photo-item" style="--rotate: -3deg;">
+                            <div class="photo-frame">
+                                <img src="./image/xingxing.jpg" alt="醒醒">
+                                <div class="photo-overlay"></div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>醒醒</h4>
+                                <p>那个阳光明媚的下午</p>
+                            </div>
+                            <div class="photo-tag">醒醒</div>
+                        </div>
+                        
+                        <div class="photo-item" style="--rotate: 2deg;">
+                            <div class="photo-frame">
+                                <img src="./image/yanxi.jpeg" alt="言汐">
+                                <div class="photo-overlay"></div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>言汐</h4>
+                                <p>陪我记实操笔记的KK</p>
+                            </div>
+                            <div class="photo-tag">言汐</div>
+                        </div>
+                        
+                        <div class="photo-item" style="--rotate: -1deg;">
+                            <div class="photo-frame">
+                                <img src="./image/yaosi.jpeg" alt="幺肆">
+                                <div class="photo-overlay"></div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>幺肆</h4>
+                                <p>KK每天陪我出行，我不能没有我的小电驴！</p>
+                            </div>
+                            <div class="photo-tag">幺肆</div>
+                        </div>
+                        
+                        <div class="photo-item" style="--rotate: 3deg;">
+                            <div class="photo-frame">
+                                <img src="./image/zhongxiaye.jpg" alt="仲夏夜">
+                                <div class="photo-overlay"></div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>仲夏夜</h4>
+                                <p>音乐将我们连接</p>
+                            </div>
+                            <div class="photo-tag">仲夏夜</div>
+                        </div>
+                        
+                        <div class="photo-item" style="--rotate: -2deg;">
+                            <div class="photo-frame">
+                                <img src="./image/xingran.jpg" alt="星冉">
+                                <div class="photo-overlay"></div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>星冉</h4>
+                                <p>KK陪我一起上班吧</p>
+                            </div>
+                            <div class="photo-tag">星冉</div>
+                        </div>
+                        
+                        <div class="photo-item" style="--rotate: 1deg;">
+                            <div class="photo-frame">
+                                <img src="./image/zongzong.jpg" alt="踪踪">
+                                <div class="photo-overlay"></div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>踪踪</h4>
+                                <p>KK陪我一起看书</p>
+                            </div>
+                            <div class="photo-tag">踪踪</div>
+                        </div>
+                        
+                        <div class="photo-item" style="--rotate: 4deg;">
+                            <div class="photo-frame">
+                                <img src="./image/XiiiNing.jpg" alt="XiiiNing">
+                                <div class="photo-overlay"></div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>XiiiNing</h4>
+                                <p>陪我坐飞机的KK</p>
+                            </div>
+                            <div class="photo-tag">XiiiNing</div>
+                        </div>
+                        
+                        <div class="photo-item" style="--rotate: -4deg;">
+                            <div class="photo-frame">
+                                <img src="./image/XiiiNing1.jpg" alt="XiiiNing">
+                                <div class="photo-overlay"></div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>XiiiNing</h4>
+                                <p>陪我坐车的KK</p>
+                            </div>
+                            <div class="photo-tag">XiiiNing</div>
+                        </div>
+						<div class="photo-item" style="--rotate: -4deg;">
+                            <div class="photo-frame">
+                                <img src="./image/shengli.jpg" alt="活捉一只王胜利">
+                                <div class="photo-overlay"></div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>活捉一只王胜利</h4>
+                                <p>KK陪我一起回家过年！</p>
+                            </div>
+                            <div class="photo-tag">活捉一只王胜利</div>
+                        </div>
+						<div class="photo-item" style="--rotate: -4deg;">
+                            <div class="photo-frame">
+                                <img src="./image/wincy.jpeg" alt="Wincy">
+                                <div class="photo-overlay"></div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>Wincy</h4>
+                                <p>KK陪我一起复习！</p>
+                            </div>
+                            <div class="photo-tag">视力2.0</div>
+                        </div>
+						<div class="photo-item" style="--rotate: -4deg;">
+                            <div class="photo-frame">
+                                <img src="./image/shili.jpg" alt="视力">
+                                <div class="photo-overlay"></div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>视力</h4>
+                                <p>摸鱼做KK的周年祝福ing...</p>
+                            </div>
+                            <div class="photo-tag">Wincy</div>
+                        </div>
+						
+						<div class="photo-item" style="--rotate: -4deg;">
+                            <div class="photo-frame">
+                                <img src="./image/zonghezheng.jpg" alt="不爱主角综合征">
+                                <div class="photo-overlay"></div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>不爱主角综合征</h4>
+                                <p>KK陪我一起去看海</p>
+                            </div>
+                            <div class="photo-tag">不爱主角综合征</div>
+                        </div>
+						<div class="photo-item" style="--rotate: -4deg;">
+                            <div class="photo-frame">
+                                <img src="./image/xiaochao1.jpg" alt="小炒喂喂">
+                                <div class="photo-overlay"></div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>小炒喂喂</h4>
+                                <p>小k陪伴度过空闲时间</p>
+                            </div>
+                            <div class="photo-tag">小炒喂喂</div>
+                        </div>
+						<div class="photo-item" style="--rotate: -4deg;">
+                            <div class="photo-frame">
+                                <img src="./image/xiaochao.jpg" alt="小炒喂喂">
+                                <div class="photo-overlay"></div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>小炒喂喂</h4>
+                                <p>小k陪上班</p>
+                            </div>
+                            <div class="photo-tag">小炒喂喂</div>
+                        </div>
+						
+						
+				<div class="photo-item" style="--rotate: -4deg;">
+                            <div class="photo-frame">
+                                <img src="./image/yohe.jpg" alt="哟呵">
+                                <div class="photo-overlay"></div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>哟呵</h4>
+                                <p>小k陪上班</p>
+                            </div>
+                            <div class="photo-tag">哟呵</div>
+                        </div>
+						
+						<div class="photo-item" style="--rotate: -4deg;">
+                            <div class="photo-frame">
+                                <img src="./image/weiyin.jpg" alt="微影">
+                                <div class="photo-overlay"></div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>微影</h4>
+                                <p>KK陪我一起出试卷</p>
+                            </div>
+                            <div class="photo-tag">微影</div>
+                        </div>
+						<div class="photo-item" style="--rotate: -4deg;">
+                            <div class="photo-frame">
+                                <img src="./image/maoyao.jpg" alt="猫妖">
+                                <div class="photo-overlay"></div>
+                            </div>
+                            <div class="photo-caption">
+                                <h4>猫妖</h4>
+                                <p>KK陪我一起上班</p>
+                            </div>
+                            <div class="photo-tag">猫妖</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scroll-hint">
+                    <div class="hint-line"></div>
+                    <div class="hint-arrow">
+                        <div class="arrow-line"></div>
+                        <div class="arrow-head"></div>
+                    </div>
+                    <p class="hint-text">滚动继续故事</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第二部分：问题1 -->
+        <section class="story-section chapter-section" id="section2">
+            <div class="chapter-number">01</div>
+            <div class="section-content">
+                <div class="question-header">
+                    <div class="question-number">Q1</div>
+                    <h2 class="question-title">你是怎么认识KK的？</h2>
+                    <p class="question-subtitle">讲述我们第一次相遇的故事</p>
+                </div>
+                
+                <div class="video-story-container">
+                    <div class="video-wrapper">
+                        <div class="video-frame">
+                            <div class="video-corners">
+                                <div class="corner top-left"></div>
+                                <div class="corner top-right"></div>
+                                <div class="corner bottom-left"></div>
+                                <div class="corner bottom-right"></div>
+                            </div>
+                            <!-- <video id="video1" controls preload="metadata"> -->
+                                <!-- <source src="./assert/6月22日.mp4" type="video/mp4"> -->
+                                <!-- 您的浏览器不支持视频播放。 -->
+                            <!-- </video> -->
+							<iframe src="//player.bilibili.com/player.html?bvid=BV1xx411c7mD&page=1"
+        scrolling="no" 
+        border="0" 
+        frameborder="no" 
+        framespacing="0" 
+        allowfullscreen="true"
+        width="100%" 
+        height="500">
+</iframe>
+                        </div>
+                    </div>
+                    
+                   
+					 <div class="story-card">
+                        <div class="card-header">
+                            <div class="trait-icon"><img src="./image/头像.jpg" alt="王胜利头像"></div>
+                            <h3 class="card-title">活捉一只王胜利</h3>
+                        </div>
+                        <div class="card-content">
+                       
+                            <blockquote class="quote">
+                                "在B站上刷二创刷到的，大眼睛小电人带着兔子耳朵真的好萌！"
+                            </blockquote>
+                        </div>
+                        <div class="card-footer">
+                            <span class="story-date">2026年 · 1月</span>
+                        </div>
+                    </div>
+					
+					 <div class="story-card">
+                        <div class="card-header">
+                            <div class="trait-icon"><img src="./image/zhongxiayehead.jpg" alt="仲夏夜头像"></div>
+                            <h3 class="card-title">仲夏夜</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>怎么认识的啊好像很复杂吧哈哈但也没有什么特别的就是特别喜欢筷子当时的褪黑素还有那句姐姐们好~哈哈(“´▽｀“)</p>
+                            <p>这句我还录下来了其实就觉得这小死玩意好可爱就好像这个人还不错加一下灯牌大家一起玩</p>
+                            <blockquote class="quote">
+                                "特别喜欢筷子当时的褪黑素还有那句姐姐们好~哈哈(“´▽｀“)"
+                            </blockquote>
+                        </div>
+                        <div class="card-footer">
+                            <span class="story-date">2026年· 1月</span>
+                        </div>
+                    </div>
+					
+					 <div class="story-card">
+                        <div class="card-header">
+                            <div class="trait-icon"><img src="./image/wincyhead.jpeg" alt="王胜利头像"></div>
+                            <h3 class="card-title">Wincy</h3>
+                        </div>
+                        <div class="card-content">
+                        <p>我是在23年11月中刷音子二创时刷到了kk的创视频，我记得好像是一首说唱歌曲来的，
+当时只觉得唱的好酷！</p>
+                            <p>然后我就找到KK的抖音点了关注，之后我就每天蹲在直播间听KK唱歌，唱得真的很好听，巨！好！听！</p>
+                            <blockquote class="quote">
+                                "KK唱歌巨！好！听！"
+                            </blockquote>
+                        </div>
+                        <div class="card-footer">
+                            <span class="story-date">2026年 · 1月</span>
+                        </div>
+                    </div>
+					
+					 <div class="story-card">
+                        <div class="card-header">
+                            <div class="trait-icon"><img src="./image/yohehead.jpg" alt="王胜利头像"></div>
+                            <h3 class="card-title">哟呵</h3>
+                        </div>
+                        <div class="card-content">
+                        <p>23年凌音阁大火，席卷了我的B站首页，我入坑了。在各个老师直播间流转，最后停在了“好好好”老师的直播间。从来不看直播的我，开始追你的排
+挡和个播。那个时候的你像一个小太阳，光芒无限，那么积极向上，让人忍不
+住想要接近你，看着你的电脑屏幕，听你唱歌聊天，好开心呀。</p>
+                            <p>开着一个0级号看了你近一年，才加你粉丝团，还是因为那天的小风车姐姐
+都在拿小号加团逗你玩，我也混入其中，这是我这个社恐人士迈出的第一步。</p>
+                            <blockquote class="quote">
+                                "小太阳，光芒无限，积极向上"
+                            </blockquote>
+                        </div>
+                        <div class="card-footer">
+                            <span class="story-date">2026年 · 1月</span>
+                        </div>
+                    </div>
+					
+                </div>
+            </div>
+        </section>
+
+        <!-- 第三部分：问题2 -->
+        <section class="story-section chapter-section" id="section3">
+            <div class="chapter-number">02</div>
+            <div class="section-content">
+                <div class="question-header">
+                    <div class="question-number">Q2</div>
+                    <h2 class="question-title">是什么让你坚持陪伴了这么久？</h2>
+                    <p class="question-subtitle">分享长久陪伴的动力与原因</p>
+                </div>
+                
+                <div class="video-story-container">
+                    <div class="story-card">
+                        <div class="card-header">
+                            <div class="trait-icon"><img src="./image/yohehead.jpg" alt="王胜利头像"></div>
+                            <h3 class="card-title">哟呵</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>因为想看着你站上顶峰，因为你值得呀。</p>
+                            <p>时间是最好的见证者。我们一起经历了那么多：第一次旅行、深夜长谈、互相鼓励的日子...</p>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">2019 · 第一次一起旅行</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">2020 · 互相支持度过困难时期</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">2021 · 一起追求梦想</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-wrapper">
+                        <div class="video-frame">
+                            <div class="video-corners">
+                                <div class="corner top-left"></div>
+                                <div class="corner top-right"></div>
+                                <div class="corner bottom-left"></div>
+                                <div class="corner bottom-right"></div>
+                            </div>
+                            <video id="video2" controls preload="metadata" >
+                                <source src="./assert/6月22日.mp4" type="video/mp4">
+                                您的浏览器不支持视频播放。
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第四部分：问题3 -->
+        <section class="story-section chapter-section" id="section4">
+            <div class="chapter-number">03</div>
+            <div class="section-content">
+                <div class="question-header">
+                    <div class="question-number">Q3</div>
+                    <h2 class="question-title">KK最吸引你的地方是什么？</h2>
+                    <p class="question-subtitle">那些让我心动的特质</p>
+                </div>
+                
+                <div class="traits-container">
+                    <div class="trait-card">
+                        <div class="trait-icon"><img src="./image/头像.jpg" alt="王胜利头像"></div>
+                        <h3 class="trait-title">活捉一只王胜利</h3>
+                        <p class="trait-desc">可爱！各个方面！</p>
+                    </div>
+                    
+                    <div class="trait-card">
+                        <div class="trait-icon"><img src="./image/zhongxiayehead.jpg" alt="仲夏夜头像"></div>
+                        <h3 class="trait-title">仲夏夜</h3>
+                        <p class="trait-desc">什么地方很吸引我啊这个 哈哈 可能是因为我一开始觉得他天天乐呵呵的很快乐
+						就是没有压力的感觉我那个时候忘记是什么事了就是压力很大就是觉得扛着很不舒服 老筷子还安慰我了 你看我赢过吗？努力就行 当时就可能是启示把
+						虽然说最后也没赢哈哈但是试一试总没错~</p>
+                    </div>
+                   
+                    <div class="trait-card">
+                        <div class="trait-icon"><img src="./image/wincyhead.jpeg" alt="wincy头像"></div>
+                        <h3 class="trait-title">Wincy</h3>
+                        <p class="trait-desc">kk最吸引我的地方，是他唱说唱很厉害，很酷，很帅，有自己的独特风格，有时候很搞笑，最重要是人品很好！我感觉kk也是比较有耐心也不会马上放弃自己的人來的，人缘关系也很好，值得信任和尊重，Kk也很温柔，也很善良，kk吸引我的地方太多了，说不完，反正我已经为kk着迷了</p>
+                    </div>
+					
+					 <!-- <div class="trait-card"> -->
+                        <!-- <div class="trait-icon"><img src="./image/yohehead.jpg" alt="仲夏夜头像"></div> -->
+                        <!-- <h3 class="trait-title">仲夏夜</h3> -->
+                        <!-- <p class="trait-desc">真诚，还是真诚。从你的好好好，到你哭着说小筷也是第一次搞直播，你不 -->
+<!-- 知道你能给小风车带来什么，你不知道你能影响那么多人，到你说自己被捧高 -->
+<!-- 了就有点飘了，再到你说自己变了，变得很功利，把一直陪着你的大家都忘记 -->
+<!-- 了，你说你很自私，只想着排档赚钱。知道你也想努力，可是你陷在那个怪圈中无法挣脱。记得有个姐姐说，能感 -->
+<!-- 觉到你在努力的调节自己的状态，却又被情绪裹挟在其中，远比知道你是一个 -->
+<!-- 糟糕的人更难受。 -->
+<!-- 你哭着说，下雪了，这是今年的第一场雪吧。那是2023年的雪，甜心，今 -->
+<!-- 天也下雪了，是2026年的第一场雪。</p> -->
+                    <!-- </div> -->
+					
+                </div>
+                
+                <div class="video-wrapper">
+                    <div class="video-frame">
+                        <div class="video-corners">
+                            <div class="corner top-left"></div>
+                            <div class="corner top-right"></div>
+                            <div class="corner bottom-left"></div>
+                            <div class="corner bottom-right"></div>
+                        </div>
+                        <video id="video3" controls preload="metadata" >
+                            <source src="./assert/6月22日.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放。
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第五部分：问题4 -->
+        <section class="story-section chapter-section" id="section5">
+            <div class="chapter-number">04</div>
+            <div class="section-content">
+                <div class="question-header">
+                    <div class="question-number">Q4</div>
+                    <h2 class="question-title">有没有哪一瞬间特别想"骂"他？</h2>
+                    <p class="question-subtitle">悄悄说，我们保密🤫</p>
+                </div>
+                
+                <div class="secret-container">
+                    <div class="secret-card">
+                        <div class="secret-icon">🤫</div>
+                        <div class="secret-content">
+                            <h3>生日那天的"惊喜"</h3>
+                            <p>去年我生日那天，KK因为工作忙到很晚，完全忘记了我的生日...</p>
+                            <p>我当时真的有点生气，但当他半夜带着蛋糕和礼物出现时，所有的"不满"都变成了感动。</p>
+                            <div class="whisper-text">（不过下次真的不能再忘了！）</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="video-wrapper">
+                    <div class="video-frame">
+                        <div class="video-corners">
+                            <div class="corner top-left"></div>
+                            <div class="corner top-right"></div>
+                            <div class="corner bottom-left"></div>
+                            <div class="corner bottom-right"></div>
+                        </div>
+                        <video id="video4" controls preload="metadata" >
+                            <source src="./assert/6月22日.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放。
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第六部分：问题5 -->
+        <section class="story-section chapter-section" id="section6">
+            <div class="chapter-number">05</div>
+            <div class="section-content">
+                <div class="question-header">
+                    <div class="question-number">Q5</div>
+                    <h2 class="question-title">KK做过最让你感动的事？</h2>
+                    <p class="question-subtitle">那些温暖心灵的瞬间</p>
+                </div>
+                
+                <div class="video-story-container">
+                    <div class="video-wrapper">
+                        <div class="video-frame">
+                            <div class="video-corners">
+                                <div class="corner top-left"></div>
+                                <div class="corner top-right"></div>
+                                <div class="corner bottom-left"></div>
+                                <div class="corner bottom-right"></div>
+                            </div>
+                            <video id="video5" controls preload="metadata" >
+                                <source src="./assert/6月22日.mp4" type="video/mp4">
+                                您的浏览器不支持视频播放。
+                            </video>
+                        </div>
+                    </div>
+                    
+                    <div class="story-card emotional">
+                        <div class="card-header">
+                            <div class="card-icon">💗</div>
+                            <h3 class="card-title">住院时的陪伴</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>去年我生病住院的时候，KK每天下班后都来医院陪我，还特意学做了我喜欢吃的菜。</p>
+                            <p>那段日子虽然身体不舒服，但心里特别温暖。KK会给我讲笑话，陪我聊天，让我忘记了病痛。</p>
+                            <div class="highlight-text">
+                                "在最需要的时候，你总是在身边"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第七部分：问题6 -->
+        <section class="story-section chapter-section" id="section7">
+            <div class="chapter-number">06</div>
+            <div class="section-content">
+                <div class="question-header">
+                    <div class="question-number">Q6</div>
+                    <h2 class="question-title">有没有因为KK感到骄傲的瞬间？</h2>
+                    <p class="question-subtitle">为他感到自豪的时刻</p>
+                </div>
+                
+                <div class="achievement-container">
+                    <div class="achievement-card">
+                        <div class="achievement-badge">🏆</div>
+                        <div class="achievement-content">
+                            <h3>年度最佳员工</h3>
+                            <p>2022年公司年会上，KK获得了年度最佳员工奖</p>
+                            <div class="achievement-details">
+                                <span class="detail-item">努力工作的回报</span>
+                                <span class="detail-item">团队认可</span>
+                                <span class="detail-item">个人成长</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <div class="achievement-badge">🎤</div>
+                        <div class="achievement-content">
+                            <h3>第一次公开演出</h3>
+                            <p>KK在音乐节上的首次公开演出，赢得了观众的喝彩</p>
+                            <div class="achievement-details">
+                                <span class="detail-item">舞台魅力</span>
+                                <span class="detail-item">音乐才华</span>
+                                <span class="detail-item">勇气可嘉</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="video-wrapper">
+                    <div class="video-frame">
+                        <div class="video-corners">
+                            <div class="corner top-left"></div>
+                            <div class="corner top-right"></div>
+                            <div class="corner bottom-left"></div>
+                            <div class="corner bottom-right"></div>
+                        </div>
+                        <video id="video6" controls preload="metadata" >
+                            <source src="./assert/6月22日.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放。
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第八部分：问题7 -->
+        <section class="story-section chapter-section" id="section8">
+            <div class="chapter-number">07</div>
+            <div class="section-content">
+                <div class="question-header">
+                    <div class="question-number">Q7</div>
+                    <h2 class="question-title">有没有想对KK说的话？</h2>
+                    <p class="question-subtitle">那些藏在心底的话语</p>
+                </div>
+                
+                <div class="message-container">
+                    <div class="message-card">
+                        <div class="message-content">
+                            <div class="message-text">
+                                <p>KK，谢谢你一直以来的陪伴和支持。</p>
+                                <p>有你在身边，我觉得特别安心，也特别幸福。</p>
+                                <p>希望未来的日子里，我们还能一起创造更多美好的回忆，一起看更多的风景，一起实现彼此的梦想。</p>
+                            </div>
+                            <div class="signature">
+                                <div class="signature-line"></div>
+                                <p class="signature-name">永远支持你的朋友</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="video-wrapper">
+                    <div class="video-frame">
+                        <div class="video-corners">
+                            <div class="corner top-left"></div>
+                            <div class="corner top-right"></div>
+                            <div class="corner bottom-left"></div>
+                            <div class="corner bottom-right"></div>
+                        </div>
+                        <video id="video7" controls preload="metadata" >
+                            <source src="./assert/6月22日.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放。
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第九部分：问题8 -->
+        <section class="story-section chapter-section end-section" id="section9">
+            <div class="chapter-number">08</div>
+            <div class="section-content">
+                <div class="question-header">
+                    <div class="question-number">Q8</div>
+                    <h2 class="question-title">歌曲安利环节：你最爱KK唱的哪首歌？为什么？背后有故事吗？</h2>
+                    <p class="question-subtitle">音乐中的回忆与情感</p>
+                </div>
+                
+                <div class="music-container">
+                    <div class="music-player">
+                        <div class="music-cover">
+                            <div class="vinyl-record">
+                                <div class="vinyl-center"></div>
+                                <div class="vinyl-label">KK</div>
+                            </div>
+                        </div>
+                        <div class="music-info">
+                            <h3 class="music-title">《那些年》</h3>
+                            <p class="music-artist">KK · 翻唱版</p>
+                            <div class="music-details">
+                                <p>这是我们第一次一起去KTV时KK唱的歌</p>
+                                <p>每当听到这首歌，就会想起那个美好的夜晚</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-wrapper">
+                        <div class="video-frame">
+                            <div class="video-corners">
+                                <div class="corner top-left"></div>
+                                <div class="corner top-right"></div>
+                                <div class="corner bottom-left"></div>
+                                <div class="corner bottom-right"></div>
+                            </div>
+                            <video id="video8" controls preload="metadata" >
+                                <source src="./assert/6月22日.mp4" type="video/mp4">
+                                您的浏览器不支持视频播放。
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ending-container">
+                    <div class="ending-title">
+                        <div class="ending-line left-line"></div>
+                        <h2>故事·未完待续</h2>
+                        <div class="ending-line right-line"></div>
+                    </div>
+                    <p class="ending-text">感谢观看这段关于KK的故事</p>
+                    <div class="credits">
+                        <p>制作：特别的朋友</p>
+                        <p>音乐：KK的歌单</p>
+                        <p>回忆：2018-2023</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页面加载动画 -->
+    <div class="loading-screen">
+        <div class="loader">
+            <div class="film-roll">
+                <div class="film"></div>
+            </div>
+            <p class="loading-text">影片加载中...</p>
+            <p class="loading-subtext">准备进入KK的故事世界</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
